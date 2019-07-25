@@ -18,8 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/profile', 'Admin\ProfileController');
-
+Route::group(['namespace' => 'Admin', 'middleware' => ['auth']], function () {
+    Route::resource('/profile', 'ProfileController');
+});
 //Route::get('/profile', function () {
 //    return view('backend.profile.index');
 //})->name('profile');

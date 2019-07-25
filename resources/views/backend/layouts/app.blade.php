@@ -18,6 +18,8 @@
     <!-- bootstrap-daterangepicker -->
     <link href="{{ asset('backend/vendors/bootstrap-daterangepicker/daterangepicker.css') }}" rel="stylesheet">
 
+@stack('css')
+
     <!-- Custom Theme Style -->
     <link href="{{ asset('backend/css/custom.min.css') }}" rel="stylesheet">
 </head>
@@ -62,6 +64,8 @@
 <!-- bootstrap-daterangepicker -->
 <script src="{{ asset('backend/vendors/moment/min/moment.min.js') }}"></script>
 <script src="{{ asset('backend/vendors/bootstrap-daterangepicker/daterangepicker.js') }}"></script>
+
+@stack('scripts')
 
 <!-- Custom Theme Scripts -->
 <script src="{{ asset('backend/js/custom.min.js') }}"></script>
