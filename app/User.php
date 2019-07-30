@@ -17,11 +17,13 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'username', 'first_name', 'last_name', 'email', 'password',
+        'role_id',
         'location_name',
         'address',
         'phone',
         'fax',
         'plan_status',
+        'plan_id',
     ];
 
     /**
@@ -41,6 +43,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function role(){
+        return $this->belongsTo('App\role');
+    }
 
     public function plan(){
         return $this->belongsTo('App\Plan');

@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('phone')->nullable();
             $table->string('fax')->nullable();
             $table->string('plan_status')->nullable();
+            $table->bigInteger('plan_id')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });
